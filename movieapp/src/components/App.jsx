@@ -1,12 +1,12 @@
 import React from "react";
+import Routes from "../routes";
 import Navigation from "./Navigation";
 
-// import { Link } from "react-router-dom";
-
-function App() {
+function App(props) {
   return (
-    <div className="app-container">
+    <div className="container">
       <Navigation />
+      <Routes />
     </div>
   );
 }
