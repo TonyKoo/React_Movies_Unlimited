@@ -4,9 +4,11 @@ import Navigation from "./Navigation";
 
 function App(props) {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Navigation />
-      <Routes />
+      <div className="container">
+        <Routes />
+      </div>
     </div>
   );
 }

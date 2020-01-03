@@ -5,9 +5,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.container {
+  max-width: 1280px;
+}
+
+.no-results {
+  margin: auto;
+  margin-top: 50px;
+  font-style: italic;
+  color: lightcoral;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.movie-container {
+  background: darkgray;
+  color: white;
+  border: 5px solid white;
+  padding: 10px;
+}
+
+.movie-poster {
+  display: block;
+  margin: 0 auto;
+}
+
+.movie-title {
+  text-align: center;
+}
+
+.movie-release-rating {
+  text-align: center;
+}
+
+.movie-rating {
+  font-weight: bold;
+}
+
+.movie-summary {
+  font-size: 0.8em;
 }
