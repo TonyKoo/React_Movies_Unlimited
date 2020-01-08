@@ -1,25 +1,26 @@
 import React from "react";
-import Moment from "react-moment";
-import Poster from "./Poster";
+import MoviePosterTitle from "./MoviePosterTitle";
+import MovieReleaseRating from "./MovieReleaseRating";
+import MovieSummary from "./MovieSummary";
+import MoreInfoButton from "./MoreInfoButton";
 
 function DisplayMovie(props) {
   return (
     <React.Fragment>
-      <Poster image={props.movie.poster} movieTitle={props.movie.title} />
-      <h5 className="movie-title">{props.movie.title}</h5>
-      <p className="movie-release-rating">
-        {props.movie.release_date !== "" && (
-          <React.Fragment>
-            <Moment parse="YYYY-MM-DD" format="MMMM DD, YYYY">
-              {props.movie.release_date}
-            </Moment>
-            <span> - </span>
-          </React.Fragment>
-        )}
-
-        <span className="movie-rating">[{props.movie.rating * 10}%]</span>
-      </p>
-      <p className="movie-summary">{props.movie.summary}</p>
+      <MoviePosterTitle
+        image={props.movie.poster}
+        movie_title={props.movie.title}
+      />
+      <MovieReleaseRating
+        release_date={props.movie.release_date}
+        movie_rating={props.movie.rating}
+      />
+      <MovieSummary
+        movie_summary={props.movie.summary}
+        truncate_text={true}
+        modal={false}
+      />
+      <MoreInfoButton movie={props.movie} />
     </React.Fragment>
   );
 }

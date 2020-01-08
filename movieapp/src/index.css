@@ -1,11 +1,12 @@
 body {
+  position: relative;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: black;
+  background: #212529;
   color: white;
 }
 
@@ -14,38 +15,117 @@ code {
     monospace;
 }
 
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   max-width: 1280px;
 }
 
+/* Navigation */
+.navbar {
+  padding: 0 16px;
+  font-size: 1.2em;
+}
+
+.main-content {
+  background: black;
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid lightgray;
+  border-radius: 20px;
+  min-height: 500px;
+}
+
+/* Pagination Styles */
+.rc-pagination {
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 1em !important;
+}
+
+.rc-pagination li {
+  height: 32px !important;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  padding: 0 15px;
+}
+
+.rc-pagination-prev,
+.rc-pagination-next,
+.rc-pagination-jump-prev,
+.rc-pagination-jump-next,
+.rc-pagination-item-link {
+  background: white;
+}
+
+.rc-pagination-disabled {
+  display: none;
+}
+
+/* Loader */
+.loader {
+  margin: 0;
+  margin-left: calc(50% - 120px);
+  margin-top: 60px;
+  width: 0%;
+}
+/* Results Container  */
+.results {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.results.row {
+  margin: 0;
+  margin-top: 10px;
+}
+
 .no-results {
-  margin: auto;
+  text-align: center;
+  width: 100%;
   margin-top: 50px;
   font-style: italic;
   color: lightcoral;
+  text-align: center;
 }
 
-.results {
-  margin-top: 20px;
+.no-results-subtitle {
+  text-align: center;
+  width: 100%;
+  font-style: italic;
+  color: lightcoral;
+  text-align: center;
 }
+
+/* Movie Tile Display */
 
 .movie-container {
-  background: darkgray;
+  background: #495057;
   color: white;
-  border: 5px solid white;
+  border: 5px solid black;
   padding: 10px;
+  border-radius: 20px;
 }
 
 .movie-poster {
   display: block;
   margin: 0 auto;
+  max-width: 100%;
 }
 
 .movie-title {
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .movie-release-rating {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
   text-align: center;
 }
 
@@ -54,5 +134,97 @@ code {
 }
 
 .movie-summary {
-  font-size: 0.8em;
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0;
+}
+
+.movie-moreinfopadder {
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+  text-align: center;
+  border-top: 3px dashed lightgray;
+  visibility: hidden;
+}
+
+.movie-moreinfo {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+
+  text-align: center;
+  border-top: 3px dashed lightgray;
+
+  padding: 10px 0;
+}
+
+/* Modal Movie Dialog */
+.modal-title {
+  width: 100%;
+  text-align: center;
+}
+
+.modal-summary-category {
+  font-weight: bold;
+}
+
+.modal-content {
+  background: #495057;
+  color: white;
+}
+
+.modal-content .movie-poster {
+  border: 1px solid lightgray;
+}
+
+/* Numeric Input */
+.react-numeric-input,
+.react-numeric-input input {
+  height: 100%;
+}
+
+/* Sort Dropdown */
+.sort-select {
+  margin: 0;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.dropdown {
+  color: black;
+}
+
+/* Rating Selection */
+.rating-select {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+/* About Page */
+.about-logo {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.about-logo img {
+  width: 100%;
+  max-width: 200px;
+}
+
+/* Search */
+.search-breadcrumb {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -60px;
+  padding: 10px 0;
+  text-align: center;
+  background: #343a40;
 }

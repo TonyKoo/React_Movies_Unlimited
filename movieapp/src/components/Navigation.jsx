@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   Nav,
@@ -10,11 +10,27 @@ import {
 } from "react-bootstrap";
 
 function Navigation() {
+  const [searchTermNav, setSearchTermNav] = useState("");
+  const [searchButtonNavDisabled, setSearchButtonNavDisabled] = useState(true);
+
+  const handleNavSearchInput = e => {
+    setSearchTermNav(e.target.value);
+    if (String(e.target.value).trim().length > 0) {
+      setSearchButtonNavDisabled(false);
+    } else {
+      setSearchButtonNavDisabled(true);
+    }
+  };
+
+  const handleSubmitClick = () => {
+    setSearchTermNav(String(searchTermNav).trim());
+  };
+
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
       {/* "Link" in brand component since just redirect is needed */}
       <Navbar.Brand as={Link} to="/">
-        Movies Unlimited
+        <img src="./images/applogo.png" alt="Movies Unlimited Logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -41,10 +57,26 @@ function Navigation() {
         <Form inline>
           <FormControl
             type="text"
-            placeholder="Search Movies"
+            placeholder="Search Movies..."
             className="mr-sm-2"
+            value={searchTermNav}
+            onChange={handleNavSearchInput}
           />
-          <Button variant="outline-success">Search</Button>
+          <Link
+            to={{
+              pathname: "/search",
+              searchTerm: searchTermNav
+            }}
+          >
+            <Button
+              type="submit"
+              variant={searchButtonNavDisabled ? "danger" : "success"}
+              disabled={searchButtonNavDisabled}
+              onClick={handleSubmitClick}
+            >
+              Search
+            </Button>
+          </Link>
         </Form>
       </Navbar.Collapse>
     </Navbar>
