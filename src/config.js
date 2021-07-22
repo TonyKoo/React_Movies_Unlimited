@@ -8,10 +8,10 @@ export const apiPrefs = {
   include_video: false,
   default_sort_option: {
     value: "vote_average.desc",
-    label: "Sort: Rating (High to Low)"
+    label: "Sort: Rating (High to Low)",
   },
   discover_genre_andor: ",", // , => AND | => OR
-  min_vote_count: 5
+  min_vote_count: 5,
 };
 
 export function createApiUrl(
@@ -29,7 +29,7 @@ export function createApiUrl(
 
 export function createSearchApiUrl(searchTerm, page = 1) {
   return (
-    `https://api.themoviedb.org/3/search/movie/?` +
+    `https://api.themoviedb.org/3/search/movie?` +
     `api_key=${API_KEY}` +
     `&language=${apiPrefs.language}` +
     `&region=${apiPrefs.region}` +
@@ -67,7 +67,7 @@ export function getDiscoverApiUrl(
   if (genresSelected != null && genresSelected.length > 0) {
     constructedUrl += `&with_genres=`;
     genresSelected.map(
-      genres =>
+      (genres) =>
         (constructedUrl += genres.value + `${apiPrefs.discover_genre_andor}`)
     );
   }
@@ -84,26 +84,26 @@ export function getMovieDetailUrl(movie_id) {
 // Home Page Settings
 export const selectionBoxPrefs = {
   isClearable: false,
-  isSearchable: false
+  isSearchable: false,
 };
 
 export const homePageDisplayOptions = [
   {
     value: "popular",
-    label: "Popular Movies"
+    label: "Popular Movies",
   },
   {
     value: "top_rated",
-    label: "Top Rated Movies"
+    label: "Top Rated Movies",
   },
   {
     value: "upcoming",
-    label: "Upcoming Movies"
+    label: "Upcoming Movies",
   },
   {
     value: "now_playing",
-    label: "Now Playing"
-  }
+    label: "Now Playing",
+  },
 ];
 
 export const selectionMaxResults = 12;
@@ -112,7 +112,7 @@ export const selectionMaxResults = 12;
 export const movieSummary = {
   truncateLines: 3,
   trimWhiteSpace: true,
-  ellipsis: "..."
+  ellipsis: "...",
 };
 
 // Discover Sort
@@ -121,14 +121,14 @@ export const discoverSortOptions = [
   { value: "vote_average.asc", label: "Sort: Rating (Low to High)" },
   {
     value: "primary_release_date.desc",
-    label: "Sort: Release Date (Newest First)"
+    label: "Sort: Release Date (Newest First)",
   },
   {
     value: "primary_release_date.asc",
-    label: "Sort: Release Date (Oldest First)"
+    label: "Sort: Release Date (Oldest First)",
   },
   { value: "original_title.asc", label: "Sort: Title (A to Z)" },
-  { value: "original_title.desc", label: "Sort: Title (Z to A)" }
+  { value: "original_title.desc", label: "Sort: Title (Z to A)" },
 ];
 
 // Movie Rating Options
@@ -143,5 +143,5 @@ export const ratingSelectOptions = [
   { value: 7, label: "7" },
   { value: 8, label: "8" },
   { value: 9, label: "9" },
-  { value: 10, label: "10 (Awesome)" }
+  { value: 10, label: "10 (Awesome)" },
 ];
