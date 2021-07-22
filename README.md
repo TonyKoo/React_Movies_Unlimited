@@ -2,7 +2,7 @@
 
 ### A React Demo App utilizing TMDB API to allow users to search, discover, save and rate their movies.
 
-Live Demo: https://react-movies-unlimited.vercel.app
+### Live Demo: https://react-movies-unlimited.vercel.app
 
 ---
 
